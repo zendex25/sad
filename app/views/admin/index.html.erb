@@ -1,0 +1,28 @@
+<h1>Welcome</h1>
+
+It's <%= Time.now.to_s(:time) %>
+
+<br><br>
+
+<h1>Database History</h1>
+
+<table>
+  
+
+  <tbody>
+    <% @versions.each do |version| %>
+      <tr>
+        <td><%= version.item_type %></td>
+        <td><%= version.item_id %></td>
+        <td><%= version.event %></td>
+        <td><%= version.whodunnit %></td>
+        <td><%= version.object %></td>
+        <td><%= version.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br><br>
+
+
+

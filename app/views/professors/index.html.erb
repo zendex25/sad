@@ -1,0 +1,39 @@
+<% title "Professors" %>
+
+<h1><%= yield(:title) %></h1>
+
+<br>
+
+<%= link_to 'New Professor', new_professor_path %>
+
+<table id="box-table-a" style="width:600px">
+  <thead>
+    <tr>
+      <th>Lname</th>
+      <th>Fname</th>
+      <th>Mi</th>
+      <th>Status</th>
+      <th>Units</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @professors.each do |professor| %>
+      <tr>
+        <td><%= professor.lname %></td>
+        <td><%= professor.fname %></td>
+        <td><%= professor.mi %></td>
+        <td><%= professor.status %></td>
+        <td><%= professor.units %></td>
+        <td><%= link_to 'Show', professor %></td>
+        <td><%= link_to 'Edit', edit_professor_path(professor) %></td>
+        <td><%= link_to 'Destroy', professor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

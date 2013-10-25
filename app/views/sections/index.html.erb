@@ -1,0 +1,38 @@
+<% title "Sections" %>
+
+<h1><%= yield(:title) %></h1>
+
+<br>
+
+<%= link_to 'New Section', new_section_path %>
+
+
+<table id="box-table-a" style="width:360px">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Yearlevel</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sections.each do |section| %>
+      <tr>
+        <td><%= section.name %></td>
+        <td><%= section.department.name %></td>
+        <td><%= section.yearlevel %></td>
+        <td><%= link_to 'Show', section %></td>
+        <td><%= link_to 'Edit', edit_section_path(section) %></td>
+        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

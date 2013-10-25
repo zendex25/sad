@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  lname: MyString
+  fname: MyString
+  mi: MyString
+  status: MyString
+  units: 1
+
+two:
+  lname: MyString
+  fname: MyString
+  mi: MyString
+  status: MyString
+  units: 1

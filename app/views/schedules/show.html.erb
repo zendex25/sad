@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Professor:</strong>
+  <%= @schedule.professor.procon %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @schedule.subject.name %>
+</p>
+
+<p>
+  <strong>Section:</strong>
+  <%= @schedule.section.seccon %>
+</p>
+
+<p>
+  <strong>Day:</strong>
+  <%= @schedule.day.desc %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @schedule.start_time.to_s(:time) %>
+</p>
+
+<p>
+  <strong>Finish time:</strong>
+  <%= @schedule.finish_time.to_s(:time) %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @schedule.room.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>

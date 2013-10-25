@@ -1,0 +1,37 @@
+<% title "Department Chairpersons" %>
+
+<h1><%= yield(:title) %></h1>
+
+<%= link_to 'New Chair', new_chair_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Lname</th>
+      <th>Fname</th>
+      <th>Mi</th>
+      <th>Department</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chairs.each do |chair| %>
+      <tr>
+        <td><%= chair.lname %></td>
+        <td><%= chair.fname %></td>
+        <td><%= chair.mi %></td>
+        <td><%= chair.department %></td>
+        <td><%= link_to 'Show', chair %></td>
+        <td><%= link_to 'Edit', edit_chair_path(chair) %></td>
+        <td><%= link_to 'Destroy', chair, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

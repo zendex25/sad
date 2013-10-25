@@ -1,0 +1,46 @@
+<%= simple_form_for @schedule do |f| %>
+  <% if @schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+      <% @schedule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<fieldset>
+      <div class="story">
+<%= f.input :professor do %> 
+        <br><%= f.select :professor_id, Professor.all.map{|j| [j.procon, j.id]}, :include_blank => true %>
+    <% end %>
+
+<br><%= f.label :subject %><br>
+<%= f.association :subject, :label => false %>
+
+
+<br><%= f.input :section_id do %><br>
+<%= f.select :section_id, Section.all.map{|s| [s.seccon, s.id]}, :include_blank => true %>
+<% end %>
+
+<br><%= f.label :day %><br>
+<%= f.association :day, :label => false %>
+
+<br><div class="field">
+<%= f.label :start_time %><br>
+<%= f.time_select :start_time, :ignore_date => true %>
+</div>
+
+<div class="field">
+<% f.time_select :finish_time, :ignore_date => true %>
+</div>
+
+<br><%= f.label :room %><br>
+<%= f.association :room, :label => false %>
+  
+<br><%= f.button :submit %>
+</div>
+</fieldset>
+ <% end %>

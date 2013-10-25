@@ -1,0 +1,37 @@
+<% title "Subjects" %>
+
+<h1><%= yield(:title) %></h1>
+
+<br>
+
+<%= link_to 'New Subject', new_subject_path %>
+
+
+<table id="box-table-a" >
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desc</th>
+      <th>Units</th>
+      <th>Department</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.name %></td>
+        <td><%= subject.desc %></td>
+        <td><%= subject.units %></td>
+        <td><%= subject.department %></td>
+        <td><%= link_to 'Show', subject %></td>
+        <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
